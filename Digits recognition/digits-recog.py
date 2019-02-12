@@ -11,10 +11,15 @@ from sklearn.datasets import load_digits
 from sklearn.model_selection import train_test_split
 
 
-
 # Define the activation function
 def sigmoid(z):
     return 1/(1+np.exp(-z))
+
+# Define an alternative activation function
+def tanh(z):
+    temp1=np.exp(z)-np.exp(-z)
+    temp2=np.exp(z)+np.exp(-z)
+    return temp1/temp2
 
 # Randomly initialize the parameters in the range -0.12 to +0.12.
 # Keeps the algorithm effecient
